@@ -6,7 +6,7 @@ count: false
 
 .p60[![Ferris](./images/ferris.svg)]
 
-View slides at `https://nikomatsakis.github.io/rustcameroon-25/`.
+View slides at `https://nikomatsakis.github.io/rustleeds-25/`.
 
 .me[.grey[*by* **Nicholas Matsakis**]]
 .footnote[Press `P` to read the transcript.]
@@ -66,147 +66,30 @@ On the other hand, all those roles inform that opinion, and I don't really belie
 
 ---
 
-# Our North Star
+# Rust's sweet spot
 
-### Empowering everyone to build reliable, efficient, and maintainable software
+### Foundational software
 
-???
+.footnote[[Read more](https://smallcultfollowing.com/babysteps/blog/2025/03/10/rust-2025-intro/)]
 
-Rust has always had a consistent north star: we want Rust to empower
-*everyone* -- that word *everyone* does a lot of work, we want Rust to broaden
-the pool of people -- building reliable, efficient, and 
--- above all -- maintainable software.
+Emphasis on
 
---
-
-*Design for the long term*
+* Reliability
+* Performance
+* Productivity
 
 ???
 
-A key part of Rust's value prop is that it helps you to build software that lasts a long time. I mean I want you to be able to write Rust programs that will still be running after you and your children are dead. Ok, that's kind of morbid. Anyway, you get the idea.
+* Software that underlies everything else
+* Everything extra important
 
 ---
 
-# Rust's most important value?
+# Lowering the barrier to entry
 
-### RELIABILITY?
+"Systems programming...not just for wizards anymore"
 
 ???
-
-So what is Rust's most important value? Is it reliability? Performance? Productivity? Actually, I think it's none of these things. They're important, but they're not the *most* important value.
-
---
-
-### PERFORMANCE?
-
-
---
-
-### PRODUCTIVITY?
-
----
-
-# Rust's most important value?
-
-### STABILITY *without* STAGNATION
-
-???
-
-I would say *that* honor goes to *Stability without stagnation*. Nobody ever gets everything right on the first try, and Rust is no exception. I mean, we try pretty hard, and I think we get pretty close, but there's always room for improvement. So we try hard to continue iterating, learning from our experiences, and making Rust better -- but we try to do that *without* disrupting that Rust software that has to work and keep working over the long term.
-
----
-
-# Rust 2024 Edition is coming!
-
-"Breaking changes where no code breaks..."
-
-.footnote[
-    [There's a song about that...](https://www.youtube.com/watch?v=q0aNduqb2Ro)
-]
-
-???
-
-One of the coolest tools we have for that is the Rust edition. The Rust Edition lets us make tweaks and changes that affect how the language works but without breaking existing crates. Usually these changes are small and you barely even notice. A key part of this is that it only affects new code or code that opts in -- old code keeps working and building like it always did, and we always support interoperability between old and new editions. So everything keeps going.
-
----
-name: rust-rusty1
-
-# What makes Rust *Rusty?*
-
-???
-
-Lately I've gotten kind of obsessed with figuring out what makes Rust *Rust*. I've found that being able to put words to the "ineffable qualities" that we are shooting for when we design can help us to achieve them more reliably.
-
----
-name: rust-rusty2
-
-# What makes Rust *Rusty?*
-
-| | What makes Rust *Rusty?* | |
-| :-- | :-- | :-- |
-| ⚙️ | Reliable | |
-| 🏎️ | Performant, composable abstractions | |
-| 🔧 | Low-level control and transparency | |
-| 🌟 | Extensible and productive | |
-| 🤸🏾 | Accessible and supportive | |
-
-.small[**NB:** Good example of where I'm speaking for myself here:<br>
-    These are not "official" values of Rust, though I think they (or something like them) should be.]
-
----
-template: rust-rusty2
-
-???
-
-This is my latest take on Rust's core goals. There are 5 of them, and they are in order, starting with the most important. Let's go through them briefly.
-
-Reliability: "if it compiles, it works" -- or at least, if it doesn't, it's
-*your* fault, not *Rust's* fault.
-
-Performant: the "first draft" of your Rust code should perform pretty well. 
-And while you may have to optimize, you won't normally have to do so by making 
-your code low-level and cryptic.
-
-Low-level control: look, if you want to account for every bit in your struct
-or count every memory allocation, we want to let you. Rust is for systems software, and sometimes that's necessary.
-
----
-name: rust-rusty3
-template: rust-rusty2
-
-.abspos.top270.left510[¹]
-
-.footnote[¹ Check out Andre Bogus's [talk on Easy Mode Rust](https://www.youtube.com/watch?v=33FG6O3qejM)! (Also, thanks Andre for *This Week in Rust*!)]
-
----
-template: rust-rusty3
-
-???
-
-Side note but I've definitely noticed that sometimes, though, people get a 
-bit too obsessed with that. You can tell an experienced Rust developer because
-they avoid complex lifetimes etc unless they're really needed.
-Andre Bogus gave a great talk on this yesterday, "Easy Mode Rust", so 
-check it out.
-
----
-template: rust-rusty3
-
-???
-Extensible: some languages try to package up everything you will ever need.
-Rust is not that language. We try to give you a good starting point and then
-give you the tools to build the rest. This is more scalable.
-
----
-template: rust-rusty3
-
-???
-
-Accessibility: I'll be honest. I wish I could say that being Rusty meant being
-*easy*, but we all know that's not true. And partly that's the domain.
-Building reliable, maintainable software that lasts a long time is HARD.
-But while we can't make it *easy*, we can be supportive, and do our best to 
-help, and that's our goal.
 
 ---
 
@@ -804,49 +687,22 @@ Welp, now I know!
 
 This is cool! Alan learned something! Now he knows about data races, and he'll take that knowledge with him, hopefully helping avoid bugs even when using languages that are not Rust.
 
-Also, if you're a child of the 80s like me, you can't see the words "Now I know"..
+---
+
+# Key takeaways
+
+* Idiomatic code is performant code
 
 --
+* Rust is an extensible language
 
-.abspos.left200.top200[
-.p100[![GI Joe](./images/knowing-is-half-the-battle.gif)]
-]
+--
+* Reliable code not only works, it keeps working as it is changed
 
-???
-
-...without thinking of GI Joe. Because knowing is half the battle!
-
----
-
-# Hack without fear
-
-> Rust lets you hack without fear.<br>
-> <br>
-> — Felix Klock, many years back
-
-???
-
-And *this*, I think, is Rust's true value proposition. I think this phrasing, "Hack without fear", is the best articulation I have heard. It came from Felix Klock many years ago. Basically the idea is that Rust lets you build the systems you wanted to build, but you were afraid, because you didn't know if you'd be able to maintain it.
-
----
-
-# Hack without fear
-
-> We had a lot of ideas to improve performance, but we were hesitant to introduce them into critical systems given the risk of subtle bugs.<br><br>
->
-> With Rust, we achieved up to double-digit percentage performance improvements. Rust’s type system provides a structure which we used to safely optimize our code.<br><br>
->
-> — Seth Markle, Senior Principal Engineer, S3
-
-???
-
-Remember I said Rust was being used in S3? Here's a great quote from a Senior Principal Engineer in that space. He's talking about how they rewrote a library that was originally in C. What I love about this is that you would think that using Rust would not give you any performance boost over using C, but in fact, precisely because of reliability, they were able to make a bunch of improvements in the design and get big wins. Cool!
 
 ---
 
 # Rust 2025 Project Goals
-
-Draft RFC open now:
 
 https://rust-lang.github.io/rust-project-goals/2025h1/index.html
 
@@ -857,43 +713,6 @@ https://rust-lang.github.io/rust-project-goals/2025h1/index.html
 Continue making Rust easier to use for network systems by
 
 bringing the Async Rust experience closer to parity with sync Rust.
-
-* tell a complete story for the use of async fn in traits, unblocking wide ecosystem adoption;
-* improve the ergonomics of Pin, which is frequently used in low-level async code; and
-* prepare to support asynchronous (and synchronous) generators in the language.
-
----
-
-# Next feature: async closures
-
-```rust
-fn debug(
-    x: impl Fn(&str) -> u32
-) -> u32 {
-    if env::var("DEBUG").is_ok() {
-        eprintln!(x(22));
-    }
-}
-
-do_something(|| "Hello")
-```
-
----
-
-# Next feature: async closures
-
-```rust
-async fn debug(
-    x: impl AsyncFn(&str) -> u32
-) -> u32 {
-    if env::var("DEBUG").is_ok() {
-        eprintln!(x(22).await);
-    }
-}
-
-do_something(|| "Hello")
-```
-
 
 ---
 
@@ -913,6 +732,41 @@ Convene Rust maintainers to celebrate Rust's tenth birthday at RustWeek 2025 (co
 
 Author a first draft for a Rust vision doc and gather feedback.
 
+---
+
+# My favorite goal?
+
+Rust Vision Doc
+
+---
+
+# Some things I think will be key
+
+* Interop via extensibility
+* Clarity of purpose everywhere
+* Level up the ecosystem
+
+---
+
+# Interop via extensibility
+
+* "Least common denominator"
+* "Deep interop"
+
+---
+
+# Clarity of purpose everywhere
+
+* Rust's biggest challenge? "Works here but not there"
+* Strech goals are how you grow: learn from Dioxus, Tauri, Leptos
+
+---
+
+# Level up the ecosystem
+
+* Crates are great -- but choosing sucks
+* Interop is hard
+* Find ways to support maintainers
 
 ---
 
